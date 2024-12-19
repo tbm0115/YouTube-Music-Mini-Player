@@ -1,0 +1,64 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>YouTube Music Mini Player</Name>
+    <RootNamespace>YouTube Music Mini Player</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>28310297-383a-4512-842c-938e291bdc25</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="assets\favicon_144.png" />
+    <Content Include="assets\favicon_32.png" />
+    <Content Include="assets\Next_dark.png" />
+    <Content Include="assets\Next_light.png" />
+    <Content Include="assets\Pause.PNG" />
+    <Content Include="assets\Pause_dark.png" />
+    <Content Include="assets\Pause_light.png" />
+    <Content Include="assets\Play_dark.png" />
+    <Content Include="assets\Play_light.png" />
+    <Content Include="assets\Previous_dark.png" />
+    <Content Include="assets\Previous_light.png" />
+    <Content Include="main.js" />
+    <Content Include="assets\music_icon_144x144.png" />
+    <Content Include="assets\music_icon_192x192.png" />
+    <Content Include="assets\music_icon_48x48.png" />
+    <Content Include="assets\music_icon_512x512.png" />
+    <Content Include="assets\music_icon_72x72.png" />
+    <Content Include="assets\music_icon_96x96.png" />
+    <Content Include="assets\music_icon_maskable_192x192.png" />
+    <Content Include="assets\music_icon_maskable_512x512.png" />
+    <Content Include="assets\Next.PNG" />
+    <Content Include="package.json" />
+    <Content Include="assets\Play.PNG" />
+    <Content Include="preload.cjs" />
+    <Content Include="assets\Previous.PNG" />
+    <Content Include="README.md" />
+    <Content Include="tray.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+</Project>

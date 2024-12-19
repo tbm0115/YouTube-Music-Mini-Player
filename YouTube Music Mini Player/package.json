@@ -1,0 +1,45 @@
+{
+  "name": "youtube-music-mini-player",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "electron-store": "^10.0.0"
+  },
+  "build": {
+    "appId": "com.lightworks.youtube-music-mini-player",
+    "productName": "YouTube Music Mini Player",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/.cache/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/music_icon_maskable_512x512.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "music_icon_maskable_512x512.png"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "music_icon_maskable_512x512.png"
+    }
+  }
+}

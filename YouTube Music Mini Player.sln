@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "YouTube Music Mini Player", "YouTube Music Mini Player\YouTube Music Mini Player.njsproj", "{28310297-383A-4512-842C-938E291BDC25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28310297-383A-4512-842C-938E291BDC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28310297-383A-4512-842C-938E291BDC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28310297-383A-4512-842C-938E291BDC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28310297-383A-4512-842C-938E291BDC25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D02BE8B-3324-4637-A4C9-ED0B542985C1}
+	EndGlobalSection
+EndGlobal
