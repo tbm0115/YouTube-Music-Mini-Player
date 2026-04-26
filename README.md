@@ -120,6 +120,7 @@ Contributions are welcome! Please:
 ![Window Screenshot](https://github.com/user-attachments/assets/aec1db22-7b3a-4d21-be01-572a5d07b7b0)
 ![Window Thumbar Screenshot](https://github.com/user-attachments/assets/a15fb1f7-06fa-4e0f-9817-b4b6d50614e5)
 ![System Tray Menu Screenshot](https://github.com/user-attachments/assets/d609439c-77c6-4d60-89a1-cc852e412738)
+![Visualizer Menu](https://github.com/user-attachments/assets/4b46caba-6784-4d2d-a9b4-98a23d39a120")
 
 ---
 
