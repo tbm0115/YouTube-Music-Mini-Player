@@ -1,4 +1,4 @@
-import { Tray, Menu } from 'electron';
+import { Menu, Tray } from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -7,45 +7,53 @@ const __dirname = path.dirname(__filename);
 
 let tray;
 
-const createTray = (mainWindow, app) => {
-    tray = new Tray(path.join(__dirname, 'assets', 'favicon_32.png')); // Add your tray icon here
+const createTray = ({
+    app,
+    showMainWindow,
+    showMiniWindow,
+    hideAllToTray,
+    executePlaybackAction,
+    isAnyWindowVisible,
+}) => {
+    tray = new Tray(path.join(__dirname, 'assets', 'favicon_32.png'));
 
     const contextMenu = Menu.buildFromTemplate([
         {
             label: 'Show App',
-            click: () => mainWindow.show(),
+            click: () => {
+                showMainWindow();
+            },
+        },
+        {
+            label: 'Mini Window',
+            click: () => {
+                showMiniWindow();
+            },
         },
         { type: 'separator' },
         {
             label: 'Play/Pause',
             click: () => {
-                // Add your playback logic here
-                mainWindow.webContents.executeJavaScript('window.controls.pressPlay()')
-                    .catch((error) => console.error('Error executing script:', error));
+                void executePlaybackAction('togglePlayPause');
             },
         },
         {
             label: 'Next',
             click: () => {
-                // Add your playback logic here
-                mainWindow.webContents.executeJavaScript('window.controls.pressNext()')
-                    .catch((error) => console.error('Error executing script:', error));
+                void executePlaybackAction('pressNext');
             },
         },
         {
             label: 'Previous',
             click: () => {
-                // Add your playback logic here
-                mainWindow.webContents.executeJavaScript('window.controls.pressPrevious()')
-                    .catch((error) => console.error('Error executing script:', error));
+                void executePlaybackAction('pressPrevious');
             },
         },
         { type: 'separator' },
         {
             label: 'Quit',
             click: () => {
-                tray.destroy();
-                app.quitting = true; // Set quitting flag
+                app.isQuitting = true;
                 app.quit();
             },
         },
@@ -55,31 +63,19 @@ const createTray = (mainWindow, app) => {
     tray.setToolTip('YouTube Music Mini Player');
 
     tray.on('click', () => {
-        if (mainWindow.isVisible()) {
-            mainWindow.hide();
-        } else {
-            mainWindow.show();
-            mainWindow.focus();
+        if (isAnyWindowVisible()) {
+            hideAllToTray();
+            return;
         }
+
+        showMainWindow();
     });
 
-    // Minimize to tray on minimize event
-    mainWindow.on('minimize', (event) => {
-        event.preventDefault(); // Prevent default minimize behavior
-        mainWindow.hide(); // Hide the window instead
-        if (process.platform === 'win32') {
-            tray.displayBalloon({
-                title: 'YouTube Music Mini Player',
-                content: 'The app is running in the system tray.',
-            });
-        }
-    });
-
-    // Restore from the tray
     tray.on('double-click', () => {
-        mainWindow.show();
-        mainWindow.focus();
+        showMainWindow();
     });
+
+    return tray;
 };
 
 export { createTray };

@@ -1,0 +1,290 @@
+:root {
+    color-scheme: dark;
+    font-family: "Segoe UI", sans-serif;
+    background: #05070a;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #05070a;
+    user-select: none;
+}
+
+body {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
+}
+
+.window-shell {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: #05070a;
+    -webkit-app-region: drag;
+}
+
+.artwork-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hover-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background:
+        linear-gradient(180deg, rgba(2, 6, 23, 0.08), rgba(2, 6, 23, 0.28)),
+        radial-gradient(circle at center, rgba(15, 23, 42, 0.06), rgba(2, 6, 23, 0.52));
+    pointer-events: none;
+    transition: opacity 180ms ease;
+}
+
+.control-strip,
+.control-button {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.window-shell:hover .hover-overlay,
+.window-shell:focus-within .hover-overlay,
+.window-shell.menu-open .hover-overlay {
+    opacity: 1;
+}
+
+.window-shell:hover .control-strip,
+.window-shell:hover .control-button,
+.window-shell:focus-within .control-strip,
+.window-shell:focus-within .control-button,
+.window-shell.menu-open .control-strip,
+.window-shell.menu-open .control-button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.top-left-controls {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    z-index: 4;
+    transform: translateY(-6px);
+    -webkit-app-region: no-drag;
+}
+
+.window-shell:hover .top-left-controls,
+.window-shell:focus-within .top-left-controls,
+.window-shell.menu-open .top-left-controls {
+    transform: translateY(0);
+}
+
+.mode-group,
+.visualizer-picker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pill-button,
+.control-button {
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+.pill-button {
+    min-height: 34px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.78);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.24);
+    font: 600 12px/1 "Segoe UI", sans-serif;
+    letter-spacing: 0.02em;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.pill-button:hover {
+    background: rgba(30, 41, 59, 0.9);
+    transform: translateY(-1px);
+}
+
+.mode-button.is-active {
+    background: rgba(220, 38, 38, 0.9);
+    box-shadow: 0 16px 28px rgba(220, 38, 38, 0.22);
+}
+
+.dropdown-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-chevron {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-1px);
+}
+
+.visualizer-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 220px;
+    padding: 8px;
+    border-radius: 18px;
+    background: rgba(2, 6, 23, 0.94);
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.36);
+    backdrop-filter: blur(12px);
+}
+
+.visualizer-menu[hidden] {
+    display: none;
+}
+
+.visualizer-option {
+    width: 100%;
+    border: 0;
+    border-radius: 14px;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    padding: 10px 12px;
+    -webkit-app-region: no-drag;
+    transition: background-color 160ms ease;
+}
+
+.visualizer-option:hover,
+.visualizer-option:focus-visible {
+    background: rgba(30, 41, 59, 0.82);
+    outline: none;
+}
+
+.visualizer-option.is-selected {
+    background: rgba(220, 38, 38, 0.22);
+}
+
+.visualizer-option-label {
+    display: block;
+    font: 600 12px/1.2 "Segoe UI", sans-serif;
+}
+
+.visualizer-option-description {
+    display: block;
+    margin-top: 4px;
+    color: rgba(226, 232, 240, 0.72);
+    font: 400 11px/1.35 "Segoe UI", sans-serif;
+}
+
+.control-button {
+    position: absolute;
+}
+
+.close-button {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.78);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.24);
+    font-size: 15px;
+    font-weight: 700;
+    transform: translateY(-6px);
+    z-index: 4;
+}
+
+.close-button:hover {
+    background: rgba(220, 38, 38, 0.92);
+}
+
+.window-shell:hover .close-button,
+.window-shell:focus-within .close-button,
+.window-shell.menu-open .close-button {
+    transform: translateY(0);
+}
+
+.playback-button {
+    top: 50%;
+    left: 50%;
+    width: 78px;
+    height: 78px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.76);
+    box-shadow: 0 22px 40px rgba(15, 23, 42, 0.32);
+    transform: translate(-50%, -50%) scale(0.94);
+    z-index: 4;
+}
+
+.playback-button:hover {
+    background: rgba(220, 38, 38, 0.88);
+    box-shadow: 0 24px 48px rgba(220, 38, 38, 0.28);
+}
+
+.window-shell:hover .playback-button,
+.window-shell:focus-within .playback-button,
+.window-shell.menu-open .playback-button {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.playback-button:disabled {
+    cursor: progress;
+}
+
+.playback-icon {
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+}
+
+.playback-button[data-state="paused"] .playback-icon::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid #ffffff;
+}
+
+.playback-button[data-state="playing"] .playback-icon::before,
+.playback-button[data-state="playing"] .playback-icon::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    width: 7px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 999px;
+}
+
+.playback-button[data-state="playing"] .playback-icon::before {
+    left: 6px;
+}
+
+.playback-button[data-state="playing"] .playback-icon::after {
+    right: 6px;
+}
+
+.pill-button:focus-visible,
+.control-button:focus-visible,
+.visualizer-option:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.92);
+    outline-offset: 2px;
+}
