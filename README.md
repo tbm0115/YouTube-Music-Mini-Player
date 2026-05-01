@@ -121,6 +121,10 @@ Contributions are welcome! Please:
 ![Window Thumbar Screenshot](https://github.com/user-attachments/assets/a15fb1f7-06fa-4e0f-9817-b4b6d50614e5)
 ![System Tray Menu Screenshot](https://github.com/user-attachments/assets/d609439c-77c6-4d60-89a1-cc852e412738)
 ![Visualizer Menu](https://github.com/user-attachments/assets/d4cb8953-e0b0-4ef5-b4f2-2f9e83457b16)
+<img width="340" height="259" alt="image" src="https://github.com/user-attachments/assets/0d55d104-237b-40a1-8a86-b54abfe28a80" />
+<img width="340" height="259" alt="image" src="https://github.com/user-attachments/assets/6cd80bea-56e3-4339-a252-2ad8c7b6eb6a" />
+<img width="340" height="259" alt="image" src="https://github.com/user-attachments/assets/6822bdd4-4156-43c1-839a-13e86d22168b" />
+<img width="340" height="259" alt="image" src="https://github.com/user-attachments/assets/e9010dcf-8955-43bd-9847-df814acc06ef" />
 
 ---
 
